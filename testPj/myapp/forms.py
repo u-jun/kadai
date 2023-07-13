@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import UserProfile
 from django.contrib.auth.forms import AuthenticationForm
 
 class LoginForm(AuthenticationForm):
@@ -9,7 +9,7 @@ class LoginForm(AuthenticationForm):
         for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
 
-class MyForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('name', 'day')
+        model = UserProfile
+        fields = ['name', 'day']

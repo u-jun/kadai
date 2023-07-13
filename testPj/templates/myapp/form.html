@@ -1,0 +1,16 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}フォーム{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <!-- 名前の入力フォーム -->
+    <input type="text" name="name" required>
+    <!-- 日にちの入力フォーム -->
+    <input type="date" name="date" required>
+    <!-- 送信ボタン -->
+    <button type="submit">保存</button>
+</form>
+
+{% endblock %}
